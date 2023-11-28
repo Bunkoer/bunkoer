@@ -1,13 +1,10 @@
 from .csv import csv_task
 from .utils import gpt, utils
-# from .csv_task import read_csv_header,prompt_csv
-# from .utils import extract_string_with_brackets,string_to_list
-
 import os
 
 
 
-def secure_csv(file_path, confimation=True, delete_src=False):
+def SecureFile(file_path, delete_src=False):
         
     model_name="gpt-4-1106-preview"
     temperature= 1
@@ -37,10 +34,7 @@ def secure_csv(file_path, confimation=True, delete_src=False):
         if bad_clumn == None:
             print("[ERROR] during the csv anonymization ")
             exit(1)
-        
-        if confimation == False:    
-            delete_columns_from_csv(file_path, bad_clumn)    
-        
+                
         if delete_src == True:
             if os.path.isfile(file_path):
                 os.remove(file_path)
@@ -48,5 +42,3 @@ def secure_csv(file_path, confimation=True, delete_src=False):
                 print(f"[ERROR] Source file : {file_path} can be deleted. ")    
 
     
-def secure_json(file_path):
-    print (f"TEst csv : {file_path}")

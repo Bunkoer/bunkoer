@@ -2,7 +2,6 @@ import requests
 import json
 import os
 
-from langchain.agents import create_pandas_dataframe_agent
 from langchain.llms.openai import OpenAI
 from langchain.embeddings.openai import OpenAIEmbeddings
 from langchain.document_loaders.csv_loader import CSVLoader
