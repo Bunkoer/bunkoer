@@ -1,5 +1,11 @@
 import os 
 
+def read_blacklist_line(file_path):
+    """Reads the first line of a file and returns it as a string."""
+    with open(file_path, 'r') as file:
+        first_line = file.readline().strip()
+    return first_line
+
 def string_to_list(string):
     """
     Converts a string representation of a list to an actual list.
