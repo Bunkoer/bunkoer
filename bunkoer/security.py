@@ -19,11 +19,14 @@ def SecureFile(file_path, delete_src=False):
             print("[ERROR] during the csv anonymization ")
             exit(1)
 
-        if os.path.isfile("./blacklist"):
-            blacklist = utils.read_blacklist_line("./blacklist")
+        prompt=""
+        blacklist_file  = os.path.join(os.path.dirname(__file__), "blacklist")
+
+        if os.path.isfile(blacklist_file):
+            blacklist = utils.read_blacklist_line(blacklist_file)
+            prompt = csv_task.prompt_csv(header, blacklist)
         else:
-            print("f[ERROR] No black list file find")
-        prompt = csv_task.prompt_csv(header, blacklist)
+            print("f[ERROR] No black list file find")        
 
         bad_clumn =  gpt.send_gpt_resquest(prompt, model_name, temperature, max_tokens=None)
         if bad_clumn == None:
