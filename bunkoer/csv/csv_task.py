@@ -2,8 +2,8 @@ import csv
 import os
 from datetime import datetime
 
-def prompt_csv(header):
-    return f"Here's a header from a csv file. Can you list only the columns that could contain Name, Surname, Email, Phone, Social Network,  in the header I provide to you .You'll need to return this list in python format without any further comment from you : {header}"
+def prompt_csv(header, blacklsit):
+    return f"Here's a header from a csv file. Can you list only the columns that could contain {blacklist}  in the header I provide to you .You'll need to return this list in python format without any further comment from you : {header}"
 
 def read_csv_header(file_path):
     """
