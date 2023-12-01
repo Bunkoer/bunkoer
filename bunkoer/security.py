@@ -18,14 +18,9 @@ def SecureFile(file_path, delete_src=False):
         if header is None:
             raise FileProcessingError("Error during the CSV anonymization - reading header failed.")
 
-        prompt = ""
-        blacklist_file = os.path.join(os.path.dirname(__file__), "./blacklist")
 
-        if os.path.isfile(blacklist_file):
-            blacklist = utils.read_blacklist_line(blacklist_file)
-            prompt = csv_task.prompt_csv(header, blacklist)
-        else:
-            raise FileProcessingError("No blacklist file found.")
+        blacklist = "Name, Surname, Phone, Social Network Profile, Bank Account, IBAN, IP Adress, Passport Number, Precise address, Email Addresses, Social Security Numbers, ID Card Numbers, User Name, Pseudonym"
+        prompt = csv_task.prompt_csv(header, blacklist)
 
         bad_column = gpt.send_gpt_request(prompt, model_name, temperature, max_tokens=None)
         if bad_column is None:
@@ -44,4 +39,6 @@ def SecureFile(file_path, delete_src=False):
                 os.remove(file_path)
             else:
                 raise FileProcessingError(f"Source file: {file_path} cannot be deleted.")
-
+        
+        anonimized_data = csv_task.delete_columns_from_csv(file_path, bad_column)
+        return anonimized_data
