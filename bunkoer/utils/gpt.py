@@ -10,7 +10,7 @@ from langchain.vectorstores import FAISS
 from langchain.chat_models import ChatOpenAI
 
 
-def send_gpt_resquest(input_message, model, temperature, max_tokens):
+def send_gpt_request(input_message, model, temperature, max_tokens):
     API_KEY = os.environ.get('OPENAI_API_KEY')
     API_ENDPOINT = "https://api.openai.com/v1/chat/completions"
 
