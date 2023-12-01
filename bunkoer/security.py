@@ -19,7 +19,7 @@ def SecureFile(file_path, delete_src=False):
             raise FileProcessingError("Error during the CSV anonymization - reading header failed.")
 
         prompt = ""
-        blacklist_file = os.path.join(os.path.dirname(__file__), "blacklist")
+        blacklist_file = os.path.join(os.path.dirname(__file__), "./blacklist")
 
         if os.path.isfile(blacklist_file):
             blacklist = utils.read_blacklist_line(blacklist_file)
