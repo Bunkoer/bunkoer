@@ -17,24 +17,12 @@ pip install bunkoer
 
 ## ⚙️ What is Bunkoer?
 
-Bunkoer is a framework designed to secure the development of applications powered by language models. It facilitates solutions that:
+Bunkoer is a framework designed to secure the development of applications powered by large language models. It facilitates solutions that:
 
 - Ensure Privacy: Bunkoer links AI models with mechanisms to safeguard sensitive information (through anonymization techniques, privacy-preserving prompts, etc.)
 - Foster Ethical AI: leans on AI models to uphold ethical standards (by evaluating and modifying responses to maintain privacy, determining appropriate data handling actions, etc.)
 
 ![Schema](images/schema.png)
-
-## What can you build with Bunkoer?
-
-💬 **Analyzing structured data**
-
-Documentation
-- End-to-end Example: CSV OpenAI Template
-
-🤖 **Chatbots**
-
-Documentation
-- End-to-end Example: ChatGPT 4 
 
 ## How Does Bunkoer Help? 
 
@@ -42,6 +30,27 @@ The core strengths of the Bunkoer framework are:
 
 - **Modular Features**: Tailored tools and integrations for enhancing data privacy in AI models. These features are designed to be both modular and user-friendly, applicable within and beyond the Bunkoer framework.
 - **Pre-configured Anonymization Processes**: Ready-made combinations of features aimed at achieving higher-level privacy tasks.
+  
+## How to use it ?
+
+### Secure your files !
+Using security feature of bunkoer you can anonymize any type of file (actually only available for csv file) without expoxing any confidential data, for exploit it as you which.
+
+With python :
+```
+#Import the security module of bunkoer
+from bunkoer.security import SecureFile #This function going to find and anonymized content that can be dangerous to expose
+
+file_path = "/path/to/your/file" #The file you want to securise 
+test = SecureFile(file_path) #The SecureFile function return a the path of the anonimized file
+
+```
+
+
+
+
+### Optimize your anonymized file !
+- Coming soon
 
 ## License 
 
