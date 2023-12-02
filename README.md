@@ -2,6 +2,11 @@
 
 ⚡  Building secure LLM applications through composability ⚡
 
+# Warning: Library Under Active Development
+
+Please be aware that this library is currently under active development. As such, it is subject to frequent updates and changes. While we strive to ensure stability and reliability, rapid evolution means that certain features or behaviors may change without prior notice. We encourage users to stay updated with the latest version, but also advise caution and thorough testing before using this library in production environments.
+
+
 ## Quick Install
 
 With pip: 
@@ -9,11 +14,6 @@ With pip:
 ```
 pip install bunkoer
 ```
-
-# Warning: Library Under Active Development
-
-Please be aware that this library is currently under active development. As such, it is subject to frequent updates and changes. While we strive to ensure stability and reliability, rapid evolution means that certain features or behaviors may change without prior notice. We encourage users to stay updated with the latest version, but also advise caution and thorough testing before using this library in production environments.
-
 
 ## ⚙️ What is Bunkoer?
 
