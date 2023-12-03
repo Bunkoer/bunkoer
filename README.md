@@ -43,11 +43,17 @@ from bunkoer.security import SecureFile #This function going to find and anonymi
 
 file_path = "/path/to/your/file" #The file you want to securise 
 test = SecureFile(file_path) #The SecureFile function return a the path of the anonimized file
-
 ```
 
+[Warning] The bunkoer lib is still developemnt and testing, sometimes the anonimization can be incorect. We are not responsable if you exposed you data 
+- Use case :
+  Now your data are secure and you can use it for any type of things. For example you can process your data on chat GPT.
+  For doing this you can simply use our repository [bunkoer x streamlit](https://github.com/Bunkoer/bunkoer-x-streamlit)
 
 
+Coming Soon :
+- Type of file : json, sql
+- Streamliy anonimization api 
 
 ### Optimize your anonymized file !
 - Coming soon
