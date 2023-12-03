@@ -14,7 +14,7 @@ Install Bunkoer with pip:
 ```bash
 pip install bunkoer
 ```
-## OpenAI API Key Required
+### OpenAI API Key Required
 
 To run the Bunkoer library, an OpenAI API key is necessary. You must obtain this key and export it in your environment variables. Set up the key as follows:
 
