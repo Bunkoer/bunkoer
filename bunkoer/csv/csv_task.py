@@ -39,18 +39,19 @@ def read_csv_header(file_path):
 
 def delete_columns_from_csv(file_path, columns_to_delete):
     """
-    Deletes specified columns from a CSV file.
+    Deletes specified columns from a CSV file and reports any columns that were not found.
 
     Args:
     file_path (str): The path to the CSV file.
     columns_to_delete (list): A list of column names to be deleted.
 
     Returns:
-    bool: True if the operation was successful, False otherwise.
+    str: output file if the operation was successful, None otherwise.
     """
-    
-    output_file =  datetime.now().strftime("%Y-%m-%d_%H-%M-%S")
-    
+
+    output_file = datetime.now().strftime("%Y-%m-%d_%H-%M-%S") + ".csv"
+    columns_not_found = []
+
     try:
         # Read the CSV file and store data
         with open(file_path, mode='r', encoding='utf-8', newline='') as file:
@@ -58,14 +59,12 @@ def delete_columns_from_csv(file_path, columns_to_delete):
             data = [row for row in reader]
             columns = reader.fieldnames
 
-        # Check if columns to delete exist in the CSV
-        if not all(col in columns for col in columns_to_delete):
-            print("[ERROR] One or more columns to delete are not found in the CSV.")
-            return False
-
-        # Remove specified columns
-        for row in data:
-            for col in columns_to_delete:
+        # Remove specified columns and report if not found
+        for col in columns_to_delete:
+            if col not in columns:
+                columns_not_found.append(col)
+                continue
+            for row in data:
                 row.pop(col, None)
 
         # Write the modified data back to a new CSV file
@@ -74,7 +73,10 @@ def delete_columns_from_csv(file_path, columns_to_delete):
             writer.writeheader()
             writer.writerows(data)
 
+        if columns_not_found:
+            print(f"[WARNING] The following columns were not found and could not be deleted: {', '.join(columns_not_found)}")
+
         return output_file
     except Exception as e:
-        print(f"[ERROR] An error occurred during the delting clumns process : {e}")
-        return False
+        print(f"[ERROR] An error occurred during the deleting columns process: {e}")
+        return None
