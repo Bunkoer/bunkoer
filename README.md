@@ -1,88 +1,74 @@
 
-# 🔒🛡️ Bunkoer
+# 🔒🛡️ Bunkoer: Enhancing LLM Application Security
 
-⚡ Building Secure LLM Applications Through Composability ⚡
+**"Empowering Ethical AI and Data Anonymization in LLM Applications"**
 
-## Warning: Library Under Active Development
+## 🚧 Active Development Alert for Bunkoer
 
-Please be aware that this library is currently under active development. As such, it is subject to frequent updates and changes. While we strive to ensure stability and reliability, its rapid evolution means that certain features or behaviors may change without prior notice. We encourage users to stay updated with the latest version, but also advise caution and thorough testing before using this library in production environments.
+Bunkoer, our cutting-edge framework for ethical AI and secure LLM applications, is evolving rapidly. This active development phase means features may change, but we're committed to stability and reliability. Keep up with our updates for the best experience, and proceed with testing before deploying in production environments.
 
-## Quick Install
+## Quick and Easy Installation
 
-Install Bunkoer with pip:
+Get Bunkoer up and running with a simple pip command:
 
 ```bash
 pip install bunkoer
 ```
-### OpenAI API Key Required
 
-To run the Bunkoer library, an OpenAI API key is necessary. You must obtain this key and export it in your environment variables. Set up the key as follows:
+### OpenAI API Key Requirement
+
+Bunkoer requires an OpenAI API key to function. Set your key in your environment variables:
 
 ```bash
 export OPENAI_API_KEY=your_api_key_here
 ```
 
-Replace `your_api_key_here` with your actual OpenAI API key. Without this key, the library will not function properly.
+*Replace `your_api_key_here` with your actual OpenAI API key.*
 
-## ⚙️ What is Bunkoer?
+## ⚙️ Introducing Bunkoer
 
-Bunkoer is a framework designed to secure the development of applications powered by large language models. It offers solutions that:
+Bunkoer is not just a library; it's a gateway to secure, ethical AI development. Our framework is built to:
 
-- **Ensure Privacy**: Bunkoer integrates AI models with mechanisms to safeguard sensitive information, employing anonymization techniques and privacy-preserving prompts.
-- **Foster Ethical AI**: The framework leans on AI models to uphold ethical standards, evaluating and modifying responses to maintain privacy and determining appropriate data handling actions.
+- **Safeguard Privacy**: We integrate advanced anonymization techniques to protect sensitive data within AI models.
+- **Promote Ethical AI Practices**: Bunkoer ensures that AI models adhere to ethical standards, focusing on privacy and responsible data handling.
 
-![Schema](images/schema.png)
+![Bunkoer's Working Schema](images/schema.png)
 
-## How Does Bunkoer Help?
+## Bunkoer's Core Features
 
-Bunkoer's core strengths include:
+- **Modular and User-Friendly**: Customize your AI models with our easy-to-integrate privacy tools.
+- **Anonymization Made Simple**: Our pre-configured solutions streamline the privacy process for your data.
 
-- **Modular Features**: Tailored tools and integrations for enhancing data privacy in AI models, designed to be both modular and user-friendly.
-- **Pre-configured Anonymization Processes**: Ready-made combinations of features aimed at achieving higher-level privacy tasks.
+## Utilizing Bunkoer
 
-## How to Use Bunkoer?
+### Secure Your Data Files
 
-### Secure Your Files
-
-Using Bunkoer's security feature, you can anonymize any type of file. Currently, this feature is available for CSV files.
-
-Example in Python:
+Anonymize files effortlessly, starting with CSV formats. Here's how:
 
 ```python
-# Import the security module of Bunkoer
 from bunkoer.security import SecureFile 
 
-file_path = "/path/to/your/file.csv"  # Specify the file you want to secure
-secured_file = SecureFile(file_path)  # SecureFile function returns the path of the anonymized file
+file_path = "/path/to/your/file.csv"
+secured_file = SecureFile(file_path)
 ```
 
-[Warning] The Bunkoer library is still under development and testing. Sometimes, the anonymization process may be incorrect. We are not responsible if your data is exposed inadvertently.
+*Note: Bunkoer is in testing phase. Data exposure risks exist.*
 
-### Use Case:
+### Practical Applications
 
-Once your data is secured, you can use it for various purposes. For example, you can process your anonymized data with ChatGPT. To do this, you can use our repository [bunkoer x streamlit](https://github.com/Bunkoer/bunkoer-x-streamlit).
+Secure data can be used in various scenarios, including processing with ChatGPT. Explore more at our [Bunkoer x Streamlit](https://github.com/Bunkoer/bunkoer-x-streamlit) repository.
 
-### Coming Soon:
+### Future Developments
 
-- Support for file types: JSON, SQL
-- Streamlined anonymization API
+- Additional file type support: JSON, SQL
+- Enhanced anonymization API
 
-### Optimize Your Anonymized File
+## Engage with Us
 
-- Coming soon
+For inquiries or collaboration, open an issue on GitHub, or connect with us on [LinkedIn](https://www.linkedin.com/company/bunkoer/) or via email at bunkoer@bunkoer.com.
 
-## Contact
-For any queries or further information, please open an issue in the GitHub repository.
+## Bunkoer License
 
-If you are interrested to work with us contact us on Linkedin : https://www.linkedin.com/company/bunkoer/ 
-or by email : bunkoer@bunkoer.com
+We grant free use of Bunkoer under specific conditions, detailed in our license agreement. Commercial use requires a separate agreement. Contact us at bunkoer@bunkoer.com for commercial licenses.
 
-## License
-
-Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Bunkoer Software"), to deal in the Bunkoer Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Bunkoer Software, and to permit persons to whom the Bunkoer Software is furnished to do so, subject to the following conditions:
-
-The Commercial Clause: Notwithstanding the above, the use of the Bunkoer Software for commercial purposes is conditioned upon the conclusion of a separate commercial license agreement. "Commercial use" refers to the use of the Bunkoer Software in a product or service that is sold, rented, or used for the purpose of generating revenue. For inquiries about commercial licenses, please contact us at bunkoer@bunkoer.com.
-
-The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Bunkoer Software.
-
-THE BUNKOER SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE BUNKOER SOFTWARE OR THE USE OR OTHER DEALINGS IN THE BUNKOER SOFTWARE.
+*Disclaimer: Bunkoer is provided "as is". We're not liable for any damages arising from its use.*
