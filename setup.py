@@ -7,6 +7,11 @@ setup(
     install_requires=[
         # liste des dépendances
     ],
-    # autres métadonnées : auteur, description, etc.
+    classifiers=[
+        'Development Status :: Alpha',
+        'Intended Audience :: Developers',
+        'License MIT License',
+        'Programming Language :: Python :: 3x',
+    ],
 )
 
