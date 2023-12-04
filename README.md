@@ -71,6 +71,12 @@ Once your data is secured, you can use it for various purposes. For example, you
 
 - Coming soon
 
+## Contact
+For any queries or further information, please open an issue in the GitHub repository.
+
+If you are interrested to work with us contact us on Linkedin : https://www.linkedin.com/company/bunkoer/ 
+or by email : bunkoer@bunkoer.com
+
 ## License
 
 Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Bunkoer Software"), to deal in the Bunkoer Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Bunkoer Software, and to permit persons to whom the Bunkoer Software is furnished to do so, subject to the following conditions:
