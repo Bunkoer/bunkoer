@@ -28,12 +28,10 @@ def SecureFile(file_path, mode="default", delete_src=False):
         else:
             raise ValueError(f"Error the mode you select : {mode} doesn't exist. PLease use a valid mode : safe, contextual")
 
-        print(prompt)
         bad_column = gpt.send_gpt_request(prompt, model_name, temperature, max_tokens=None)
         if bad_column is None:
             raise FileProcessingError("Error during the CSV anonymization - GPT request failed.")
 
-        print(bad_column)
         bad_column = utils.extract_string_with_brackets(bad_column)
         if bad_column is None:
             raise FileProcessingError("Error during the CSV anonymization - extracting string failed.")
