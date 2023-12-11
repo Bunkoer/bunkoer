@@ -4,11 +4,30 @@ from langchain.document_loaders.csv_loader import CSVLoader
 from langchain.vectorstores import FAISS
 from langchain.embeddings.openai import OpenAIEmbeddings
 
+import os
+import tempfile
+
 def handle_file_upload(uploaded_file):
+    input_folder = 'file/input'
+    output_folder = 'file/output'
+
+    if not os.path.exists(input_folder):
+        os.makedirs(input_folder)
+    if not os.path.exists(output_folder):
+        os.makedirs(output_folder)
+
     _, file_extension = os.path.splitext(uploaded_file.name)
-    with tempfile.NamedTemporaryFile(delete=False, suffix=file_extension) as tmp_file:
-        tmp_file.write(uploaded_file.getvalue())
-        return SecureFile(tmp_file.name)
+
+    input_file_path = os.path.join(input_folder, uploaded_file.name)
+
+    with open(input_file_path, 'wb') as f:
+        f.write(uploaded_file.getvalue())
+
+    output_file_name = 'output' + file_extension
+    output_file_path = os.path.join(output_folder, output_file_name)
+
+    return output_file_path 
+
 
 def process_uploaded_data(file_secure):
     try:
