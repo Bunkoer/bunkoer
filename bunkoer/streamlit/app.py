@@ -1,5 +1,6 @@
 import streamlit as st
 from .config import configure_page
+from .utils import handle_file_upload
 from .ui import display_headers, upload_file_sidebar, create_chat_interface
 
 def main():
