@@ -10,6 +10,7 @@ import os  # For interacting with the operating system
 # Secure file handling from bunkoer library
 from bunkoer.security import SecureFile
 from bunkoer.utils.gpt import send_gpt_request
+from bunkoer.txt.text_task import anonymize_text, deanonymize_text
 
 
 def main():
@@ -51,7 +52,7 @@ def main():
 
         # Setting up the conversational retrieval chain
         chain = ConversationalRetrievalChain.from_llm(
-            llm=ChatOpenAI(temperature=0.7, model_name='gpt-4-1106-preview'),  # Configuring the chat model
+            llm=ChatOpenAI(temperature=1, model_name='gpt-4-1106-preview'),  # Configuring the chat model
             retriever=vectorstore.as_retriever()  # Setting up the retriever with the vector store
         )
 
@@ -70,6 +71,8 @@ def main():
         else:
             print("User input", user_input)
             output = send_gpt_request(user_input , model="gpt-4-1106-preview", temperature=0.7, max_tokens=None)
+            print ("BEFORE : ", output)
+            output = deanonymize_text(output)
             result["answer"] = output
 
         # Append the query and the answer to the session state history
@@ -79,8 +82,6 @@ def main():
     # Initializing various states for the conversation
     if 'history' not in st.session_state:
         st.session_state['history'] = []
-    if 'chat' not in st.session_state:
-        st.session_state['chat'] = []
     if 'generated' not in st.session_state:
         st.session_state['generated'] = ["Hello ! Upload a file for begin "]
     if 'past' not in st.session_state:
@@ -96,7 +97,12 @@ def main():
             user_input = st.text_input("Query:", placeholder="Talk about your csv data here (:",
                                     key='input')  # Input field for user query
             submit_button = st.form_submit_button(label='Send')  # Send button
-            if submit_button and user_input:
+            if submit_button and user_input and uploaded_file :
+                output = conversational_chat(user_input)  # Handling the chat functionality
+                st.session_state['past'].append(user_input)  # Updating past queries
+                st.session_state['generated'].append(output)  # Updating generated responses
+            elif submit_button and user_input :
+                user_input = anonymize_text(user_input)
                 output = conversational_chat(user_input)  # Handling the chat functionality
                 st.session_state['past'].append(user_input)  # Updating past queries
                 st.session_state['generated'].append(output)  # Updating generated responses
