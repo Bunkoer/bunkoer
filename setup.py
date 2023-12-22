@@ -2,20 +2,20 @@ from setuptools import setup, find_packages
 
 setup(
     name='bunkoer',
-    version='0.0.2',
+    version='0.0.6-dev',
     packages=find_packages(),
     entry_points={
         'console_scripts': [
-            'bunkoer = bunkoer.main:main',
-    ],
+            'bunkoer=bunkoer.main:run_streamlit',
+        ],
+    },
     install_requires=[
         # liste des dépendances
     ],
     classifiers=[
-        'Development Status :: Alpha',
         'Intended Audience :: Developers',
-        'License MIT License',
-        'Programming Language :: Python :: 3x',
+        'License :: OSI Approved :: MIT License',  # Assurez-vous que cette ligne correspond à votre licence
+        'Programming Language :: Python :: 3',  # Assurez-vous que cette ligne correspond à votre version de Python
     ],
 )
 

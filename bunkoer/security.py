@@ -1,4 +1,5 @@
 from .csv import csv_task
+from .txt import pdf_task, text_task
 from .utils import gpt, utils
 import os
 
@@ -8,16 +9,21 @@ class FileProcessingError(Exception):
 def SecureFile(file_path, mode="default", delete_src=False):
     model_name = "gpt-4-1106-preview"
     temperature = 1
-    list_of_valid_file = ('.csv')
+    list_of_valid_file = ('.csv', '.txt', '.pdf')
 
     if not file_path.endswith(list_of_valid_file):
         raise FileProcessingError(f"The file '{file_path}' is not a valid file type.")
+
+    if file_path.endswith(".pdf"):
+        content = pdf_task.extract_text_from_pdf(file_path)
+        secure_content = text_task.anonymize_text(content)
+        anonimized_data = pdf_task.create_pdf_with_text(secure_content)
+        return anonimized_data
 
     if file_path.endswith(".csv"):
         header = csv_task.read_csv_header(file_path)
         if header is None:
             raise FileProcessingError("Error during the CSV anonymization - reading header failed.")
-
 
         blacklist = "Name, Surname, Phone, Social Network Profile, Bank Account, IBAN, IP Adress, Passport Number, Precise address, Email Addresses, Social Security Numbers, ID Card Numbers, User Name, Pseudonym"
         prompt = ""

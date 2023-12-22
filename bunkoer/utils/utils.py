@@ -51,6 +51,13 @@ def extract_string_with_brackets(text):
         print(f"[ERROR] An unexpected error occurred during the string extraction with brackets: {e}")
         return None
 
+def check_api_key():
+    API_KEY = os.environ.get('OPENAI_API_KEY')
+    if API_KEY == "" or API_KEY == None:
+        print ("[ERROR] OPENAI_API_KEY is empty, please use  the command export OPENAI_API_KEY=your_api_key_here, to set it")
+        exit(1)
+
+
 def delete_file(filepath):
     """
     Delete a file at the given filepath.
