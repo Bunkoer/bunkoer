@@ -63,10 +63,6 @@ secured_file = SecureFile(file_path)
 
 *Note: Bunkoer is in testing phase. Data exposure risks exist.*
 
-### Practical Applications
-
-Secure data can be used in various scenarios, including processing with ChatGPT. Explore more at our [Bunkoer x Streamlit](https://github.com/Bunkoer/bunkoer-x-streamlit) repository.
-
 ### Future Developments
 
 - Additional file type support: JSON, SQL
