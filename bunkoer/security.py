@@ -1,5 +1,4 @@
-from .csv import csv_task
-from .txt import pdf_task, text_task
+from .format import csv_task, pdf_task, text_task
 from .utils import gpt, utils
 import os
 

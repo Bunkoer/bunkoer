@@ -12,9 +12,14 @@ from bunkoer.security import SecureFile
 def handle_file(uploaded_file):
     input_folder = 'file/input'
     output_folder = 'file/output'
+    if not os.path.exists(input_folder):
+        os.makedirs(input_folder)
+    if not os.path.exists(output_folder):
+        os.makedirs(output_folder)
     _, file_extension = os.path.splitext(uploaded_file.name)  # Extracting file extension
     input_file_path = os.path.join(input_folder, uploaded_file.name)
     output_file_path = ""
+    
     if input_file_path.endswith(".csv"):
         with open(input_file_path, 'wb') as f:
             f.write(uploaded_file.getvalue())
