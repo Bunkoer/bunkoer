@@ -1,5 +1,5 @@
 
-# 🔒🛡️ Bunkoer: Enhancing LLM Application Security
+# 🔒🛡️ Bunkoer: Enhancing LLM Application Deployment and Security
 
 **"Empowering Ethical AI and Data Anonymization in LLM Applications"**
 
