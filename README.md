@@ -22,8 +22,17 @@ Bunkoer requires an OpenAI API key to function. Set your key in your environment
 ```bash
 export OPENAI_API_KEY=your_api_key_here
 ```
-
 *Replace `your_api_key_here` with your actual OpenAI API key.*
+
+### Run your interface
+
+Get a Ui for making all you test:
+
+```bash
+python3 -m bunkoer
+```
+With this ui you can have a secure anonimized chat and work with pdf and csv file safely
+*Disclamer we are not responsable of the security of your data*
 
 ## ⚙️ Introducing Bunkoer
 
