@@ -2,7 +2,7 @@ from setuptools import setup, find_packages
 
 setup(
     name='bunkoer',
-    version='0.0.6-dev',
+    version='0.0.9-dev',
     packages=find_packages(),
     entry_points={
         'console_scripts': [

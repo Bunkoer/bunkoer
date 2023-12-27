@@ -1,6 +1,6 @@
 import os
 import subprocess
-from utils.utils import check_api_key
+from .utils.utils import check_api_key
 
 def run_streamlit():
     check_api_key()
