@@ -2,7 +2,7 @@ from setuptools import setup, find_packages
 
 setup(
     name='bunkoer',
-    version='0.0.6-dev',
+    version='0.0.2',
     packages=find_packages(),
     entry_points={
         'console_scripts': [
@@ -10,7 +10,16 @@ setup(
         ],
     },
     install_requires=[
-        # liste des dépendances
+        'streamlit',
+        'streamlit-chat',
+        'openai',
+        'PyPdf2',
+        'fpdf',
+        'langchain==0.0.352',
+        'langchain-experimental==0.0.47',
+        'langchain-community==0.0.6',
+        'langchain-core==0.1.3',
+        'langsmith==0.0.75',
     ],
     classifiers=[
         'Intended Audience :: Developers',
